@@ -18,15 +18,20 @@ app.get("/api/codes",async(req,res)=>{
     }
 })
 app.use(express.json());
-app.post("/api/codes/use",(req,res)=>{
+app.post("/api/codes/use",async (req,res)=>{
 
     const {data} =req.body;
+    // console.log(req.body);
+    const result = await DataModel.findOne({ data });
+    if (result){
+        res.send({msg:"This code has already been used"});
+    }
+    else{
+        // const saveDataModel=new DataModel({data});
+        // saveDataModel.save();
 
-    const saveDataModel=new DataModel({data})
-        
-    saveDataModel.save();
-    // console.log(name)
-    res.send({msg:"posted"});
+        res.send({msg:"posted"});
+    }
 })
 
 

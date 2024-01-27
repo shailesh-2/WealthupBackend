@@ -1,7 +1,7 @@
 const mongoose=require("mongoose");
 
 const DataSchema=new mongoose.Schema({
-    data: {type:String},
+    data: String,
 })
 
 const DataModel=mongoose.model("data",DataSchema);
