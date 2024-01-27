@@ -37,7 +37,7 @@ app.post("/api/codes/use",async (req,res)=>{
 
 
 
-app.listen(8081, async()=>{
+app.listen(8082, async()=>{
     try{
         await connection
         console.log("connected");
