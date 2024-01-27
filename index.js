@@ -27,8 +27,8 @@ app.post("/api/codes/use",async (req,res)=>{
         res.send({msg:"This code has already been used"});
     }
     else{
-        // const saveDataModel=new DataModel({data});
-        // saveDataModel.save();
+        const saveDataModel=new DataModel({data});
+        saveDataModel.save();
 
         res.send({msg:"posted"});
     }
